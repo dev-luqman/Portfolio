@@ -1,5 +1,7 @@
 ## My Portfolio
-This is a static website built with htm, css and javascriptp
+This is a static website built with htm, css and javascript
+
+![](./img/Static_website_CloudFormation.png)
 
 ### Documents
 1. css / styling
