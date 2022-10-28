@@ -18,9 +18,9 @@ commands:
         default: "Hello World"
     steps:
       - run:
-        name: only run when failed
-        command: echo running because previous step fail
-        when: on_fail
+          name: only run when failed
+          command: echo running because previous step fail
+          when: on_fail
 
 orbs:
   welcome: circleci/welcome-orb@0.4.1
