@@ -7,6 +7,7 @@ jobs:
   print_hello:
     environment: 
       PIPELINE_ID: << pipeline.git.branch >>
+      MY_NAME: Balogun Lukman
     docker:
       - image: circleci/node:13.8.0
     steps:
@@ -19,6 +20,13 @@ jobs:
       - run: echo My pipeline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>.
       - run: echo env pipeline $PIPELINE_ID
 
+  print_my_name:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - run: echo $MY_NAME
+
+
 workflows:
   welcome:
     jobs:
@@ -27,3 +35,4 @@ workflows:
       - print_world:
           requires:
             - print_hello
+      - print_my_name
