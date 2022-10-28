@@ -24,7 +24,7 @@ jobs:
       - attach_workspace:
           at: ~/workspace
       - run: cat ~/workspace/output.txt
-      - run: cd ~/workspace
+      - run: ls -la ~/workspace
 
 workflows:
   welcome:
