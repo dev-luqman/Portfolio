@@ -23,7 +23,7 @@ jobs:
 
       - attach_workspace:
           at: /tmp/workspace
-      - run: cat workspace/output.txt
+      - run: cat output.txt
 
 workflows:
   welcome:
