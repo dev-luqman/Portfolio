@@ -10,6 +10,18 @@ commands:
     steps:
       - run: echo << parameters.to >>
 
+  print_on_fail:
+    description: "A very simple command for demonstration purposes"
+    parameters:
+      to:
+        type: string
+        default: "Hello World"
+    steps:
+      - run:
+        name: only run when failed
+        command: echo running because previous step fail
+        when: on_fail
+
 orbs:
   welcome: circleci/welcome-orb@0.4.1
 
@@ -20,7 +32,6 @@ jobs:
   
 
     steps:
-
       - print_my_id: 
           to: $CIRCLE_WORKFLOW_ID
       - run: mkdir ~/workspace
@@ -34,11 +45,14 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-
       - attach_workspace:
           at: ~/workspace
       - run: cat ~/workspace/output.txt
       - run: ls -la ~/workspace
+      - run: 
+        name: fail command
+        command: return 1
+      - print_on_fail
 
 workflows:
   welcome:
