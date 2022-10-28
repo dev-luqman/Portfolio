@@ -17,12 +17,12 @@ jobs:
   save_hello_world_output:
     docker:
       - image: circleci/node:13.8.0
-    
-
-    print_my_id: 
-      to: $CIRCLE_WORKFLOW_ID
+  
 
     steps:
+
+      - print_my_id: 
+          to: $CIRCLE_WORKFLOW_ID
       - run: mkdir ~/workspace
       - run: echo hello world > ~/workspace/output.txt
       - persist_to_workspace:
