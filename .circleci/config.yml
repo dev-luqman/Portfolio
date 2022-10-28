@@ -9,7 +9,8 @@ jobs:
       - image: circleci/node:13.8.0
 
     steps:
-      - run: mkdir workspace
+      - run: mkdir tmp
+      - run: mkdir tmp/workspace
       - run: echo hello world > output.txt
       - persist_to_workspace:
           root: /tmp/workspace
