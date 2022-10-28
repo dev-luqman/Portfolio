@@ -9,10 +9,10 @@ jobs:
       - image: circleci/node:13.8.0
 
     steps:
-      - run: mkdir workspace
-      - run: echo hello world > workspace/output.txt
+      - run: mkdir ~/workspace
+      - run: echo hello world > ~/workspace/output.txt
       - persist_to_workspace:
-          root: workspace
+          root: ~/workspace
           paths:
             - output.txt
 
@@ -22,8 +22,8 @@ jobs:
     steps:
 
       - attach_workspace:
-          at: /tmp/workspace
-      - run: cat output.txt
+          at: ~/workspace
+      - run: cat ~/workspace/output.txt
 
 workflows:
   welcome:
