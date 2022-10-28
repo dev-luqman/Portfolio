@@ -1,5 +1,15 @@
 version: 2.1
 
+commands:
+  print_my_id:
+    description: "A very simple command for demonstration purposes"
+    parameters:
+      to:
+        type: string
+        default: "Hello World"
+    steps:
+      - run: echo << parameters.to >>
+
 orbs:
   welcome: circleci/welcome-orb@0.4.1
 
@@ -7,6 +17,10 @@ jobs:
   save_hello_world_output:
     docker:
       - image: circleci/node:13.8.0
+    
+
+    print_my_id: 
+      to: $CIRCLE_WORKFLOW_ID
 
     steps:
       - run: mkdir ~/workspace
