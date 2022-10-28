@@ -16,7 +16,8 @@ jobs:
       - run: echo hello
       - run: echo env pipeline $PIPELINE_ID
       - run: echo ${MY_NAME}
-      
+      - run: echo 'export MY_ENV_VAR="FOO_BAR"' >> "$BASH_ENV"
+
   print_world:
     docker:
       - image: circleci/node:13.8.0
@@ -29,7 +30,7 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run: echo ${MY_NAME}
+      - run: echo ${MY_ENV_VAR}
 
 
 workflows:
