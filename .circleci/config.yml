@@ -4,42 +4,32 @@ orbs:
   welcome: circleci/welcome-orb@0.4.1
 
 jobs:
-  print_hello:
+  save_hello_world_output:
     docker:
       - image: circleci/node:13.8.0
-    
-    environment: 
-      MY_NAME: Balogun Lukman
-      PIPELINE_ID: << pipeline.git.branch >>
 
     steps:
-      - run: echo hello
-      - run: echo env pipeline $PIPELINE_ID
-      - run: echo ${MY_NAME}
-      - run: echo 'export MY_ENV_VAR="FOO_BAR"' >> "$BASH_ENV"
-      - run: echo ${MY_ENV_VAR}
+      - run: echo hello world > output.txt
+      - persist_to_workspace:
+          root: /tmp
+          paths:
+            # - target/application.jar
+            - output.txt
 
-  print_world:
+  print_output_file:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run: echo world
-      - run: echo My pipeline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>.
-      - run: echo env pipeline $PIPELINE_ID
 
-  print_my_name:
-    docker:
-      - image: circleci/node:13.8.0
-    steps:
-      - run: echo ${MY_ENV_VAR}
-
+      - attach_workspace:
+          at: /tmp
+      - run: cat tmp/output.txt
 
 workflows:
   welcome:
     jobs:
       - welcome/run
-      - print_hello
-      - print_world:
+      - save_hello_world_output
+      - print_output_file:
           requires:
-            - print_hello
-      - print_my_name
+            - save_hello_world_output
