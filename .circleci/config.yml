@@ -15,7 +15,7 @@ commands:
       - run:
           name: only run when failed
           command: echo running because previous step fail
-          when: on_fail
+          # when: on_fail
 
 orbs:
   welcome: circleci/welcome-orb@0.4.1
@@ -47,7 +47,7 @@ jobs:
       - run: 
           name: fail command
           command: return 1
-      # - print_on_fail
+      - print_on_fail
 
 workflows:
   welcome:
