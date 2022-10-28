@@ -46,7 +46,7 @@ jobs:
       - run: ls -la ~/workspace
       - run: 
           name: fail command
-          command: return 1
+          command: exit 1
       - print_on_fail
 
 workflows:
