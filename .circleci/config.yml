@@ -47,7 +47,7 @@ jobs:
       - run: 
           name: fail command
           command: return 1
-      - print_on_fail
+      # - print_on_fail
 
 workflows:
   welcome:
