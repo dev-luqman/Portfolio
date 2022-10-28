@@ -9,13 +9,11 @@ jobs:
       - image: circleci/node:13.8.0
 
     steps:
-      - run: mkdir tmp
-      - run: mkdir tmp/workspace
-      - run: echo hello world > output.txt
+      - run: mkdir workspace
+      - run: echo hello world > workspace/output.txt
       - persist_to_workspace:
-          root: /tmp/workspace
+          root: /workspace
           paths:
-            # - target/application.jar
             - output.txt
 
   print_output_file:
