@@ -17,6 +17,7 @@ jobs:
       - run: echo env pipeline $PIPELINE_ID
       - run: echo ${MY_NAME}
       - run: echo 'export MY_ENV_VAR="FOO_BAR"' >> "$BASH_ENV"
+      - run: echo ${MY_ENV_VAR}
 
   print_world:
     docker:
