@@ -1508,6 +1508,12 @@ a:focus {
 	overflow: hidden;
 	position: relative;
 }
+
+.eb_deployment{
+	height: 300px;
+}
+
+
 .resumo_fn_blog_list .abs_img{
 	position: absolute;
 	top: 0;
