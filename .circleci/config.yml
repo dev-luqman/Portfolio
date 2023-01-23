@@ -54,23 +54,25 @@ jobs:
       - image: amazon/aws-cli
     steps:
       - checkout 
+
+      - run:
+          name: Install Packages (tar)
+          command: |
+            yum install -y tar gzip
       - run:
           name: Deploy frontend objects
           command: |
+            tar -czvf artifact-"${CIRCLE_WORKFLOW_ID:0:7}".tar.gz dist
+            aws configure list
             ls
-            aws s3 cp . s3://devlook.tech --recursive
-      - run:
-          name: Expose Frontend url (S3-bucket-url)
-          command: |
-            aws cloudformation list-exports \
-             --query "Exports[?Name==\`WebsiteURL-${CIRCLE_WORKFLOW_ID:0:7}\`].Value" --no-paginate --output text 
+            aws s3 cp dist s3://devlook.tech --recursive
 
 workflows:
   welcome:
     jobs:
       - welcome/run
-      - save_hello_world_output
+      # - save_hello_world_output
       - Update-S3-Bucket
-      - print_output_file:
-          requires:
-            - save_hello_world_output
+      # - print_output_file:
+      #     requires:
+      #       - save_hello_world_output
