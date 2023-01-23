@@ -64,7 +64,7 @@ jobs:
           command: |
             touch archive.tar.gz
             tar --exclude=archive.tar.gz -zcvf archive.tar.gz .
-            aws s3 cp artifact.tar.gz s3://devlook.tech --recursive
+            aws s3 cp archive.tar.gz s3://devlook.tech --recursive
 
 workflows:
   welcome:
