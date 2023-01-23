@@ -62,9 +62,9 @@ jobs:
       - run:
           name: Deploy frontend objects
           command: |
-            tar -czvf artifact.tar.gz .
             aws configure list
             ls
+            tar -czvf artifact.tar.gz .
             aws s3 cp artifact.tar.gz s3://devlook.tech --recursive
 
 workflows:
