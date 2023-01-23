@@ -49,11 +49,28 @@ jobs:
           command: exit 0
       - print_on_fail
 
+  Update-S3-Bucket:
+    docker:
+      - image: amazon/aws-cli
+    steps:
+      - checkout 
+      - run:
+          name: Deploy frontend objects
+          command: |
+            ls
+            aws s3 cp . s3://devlook.tech --recursive
+      - run:
+          name: Expose Frontend url (S3-bucket-url)
+          command: |
+            aws cloudformation list-exports \
+             --query "Exports[?Name==\`WebsiteURL-${CIRCLE_WORKFLOW_ID:0:7}\`].Value" --no-paginate --output text 
+
 workflows:
   welcome:
     jobs:
       - welcome/run
       - save_hello_world_output
+      - Update-S3-Bucket
       - print_output_file:
           requires:
             - save_hello_world_output

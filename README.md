@@ -1,6 +1,9 @@
 ## My Portfolio
 This is a static website built with htm, css and javascript
 
+## CircleCi Status
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/dev-luqman/Portfolio/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/dev-luqman/Portfolio/tree/main)
+
 ![](./img/Static_website_CloudFormation.png)
 
 ### Documents
