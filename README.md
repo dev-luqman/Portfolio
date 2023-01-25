@@ -16,9 +16,9 @@ Building a personal website with  HTML, CSS and Javascript and running a pipelin
 ### CI CD Pipeline tools 
 1. [CircleCi](https://circleci.com/)
 2. [AWS](https://aws.amazon.com/)
-  . IAM with least access to only s3-bucket
-  . S3 Bucket - ``` expose for public access ```
-  . Route 53 - ``` optional ```
+  - IAM with least access to only s3-bucket
+  - S3 Bucket - ``` expose for public access ```
+  - Route 53 - ``` optional ```
 
 
 ### Live Hosting At
