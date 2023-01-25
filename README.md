@@ -16,13 +16,11 @@ Building a personal website with  HTML, CSS and Javascript and running a pipelin
 ### CI CD Pipeline tools 
 1. [CircleCi](https://circleci.com/)
 2. [AWS](https://aws.amazon.com/)
-  1. IAM with least access to only s3-bucket
-  2. S3 Bucket - ``` expose for public access ```
-  3. Route 53 - ``` optional ```
+  . IAM with least access to only s3-bucket
+  . S3 Bucket - ``` expose for public access ```
+  . Route 53 - ``` optional ```
 
 
 ### Live Hosting At
 [devLook](http://devlook.tech/)
 
-### 'To Espect'
-Would be Automating the site through using codebuild/codepipeline to s3-bucket and attach the domain name to R53 on aws
