@@ -62,9 +62,9 @@ jobs:
       - run:
           name: Deploy frontend objects
           command: |
-            cp -R $(cat mv_list) destination
-            ls -a destination 
-            aws s3 cp destination s3://devlook.tech --recursive
+            cp -R $(cat mv_list) ./destination
+            ls -a ./destination 
+            aws s3 cp ./destination s3://devlook.tech --recursive
 
 workflows:
   welcome:
