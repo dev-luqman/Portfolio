@@ -62,10 +62,9 @@ jobs:
       - run:
           name: Deploy frontend objects
           command: |
-            touch archive.tar.gz
-            tar --exclude=archive.tar.gz -zcvf archive.tar.gz .
-            ls
-            aws s3 cp archive.tar.gz s3://devlook.tech --recursive
+            cp -R $(cat mv_list) destination
+            ls -a destination 
+            aws s3 cp destination s3://devlook.tech --recursive
 
 workflows:
   welcome:
