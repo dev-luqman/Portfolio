@@ -66,15 +66,12 @@ jobs:
             mkdir destination
             cp -R $(cat mv_list) ./destination
             ls -a ./destination 
-            aws s3 ls
             aws s3 cp ./destination s3://devlook.tech --recursive
 
 workflows:
   welcome:
     jobs:
-      # - welcome/run
-      # - save_hello_world_output
-      - Update-S3-Bucket
-      # - print_output_file:
-      #     requires:
-      #       - save_hello_world_output
+      - Update-S3-Bucket:     
+          filters:
+            branches:
+              only: [main]
