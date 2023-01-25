@@ -655,7 +655,7 @@ a:focus {
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
-	margin: 100px 0;
+	margin: 50px 0;
 	/* min-height: 100vh; */
 	-ms-align-items: center;
 	align-items: center;
@@ -1226,7 +1226,7 @@ a:focus {
 /*	12) Portfolio Section
 /*------------------------------------------------------------------*/
 #portfolio{
-	padding: 150px 0 39px;
+	padding: 50px 0 39px;
 	overflow: hidden;
 }
 #portfolio .noright .roww{

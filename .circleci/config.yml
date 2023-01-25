@@ -1,53 +1,6 @@
 version: 2.1
 
-# commands:
-#   print_my_id:
-#     description: "A very simple command for demonstration purposes"
-#     parameters:
-#       to:
-#         type: string
-#         default: "Hello World"
-#     steps:
-#       - run: echo << parameters.to >>
-
-#   print_on_fail:
-#     steps:
-#       - run:
-#           name: only run when failed
-#           command: echo running because previous step fail
-#           when: on_fail
-
-# orbs:
-#   welcome: circleci/welcome-orb@0.4.1
-
 jobs:
-  # save_hello_world_output:
-  #   docker:
-  #     - image: circleci/node:13.8.0
-  
-
-    # steps:
-    #   - print_my_id: 
-    #       to: $CIRCLE_WORKFLOW_ID
-    #   - run: mkdir ~/workspace
-    #   - run: echo hello world > ~/workspace/output.txt
-    #   - persist_to_workspace:
-    #       root: ~/workspace
-    #       paths:
-    #         - output.txt
-
-  # print_output_file:
-  #   docker:
-  #     - image: circleci/node:13.8.0
-  #   steps:
-  #     - attach_workspace:
-  #         at: ~/workspace
-  #     - run: cat ~/workspace/output.txt
-  #     - run: ls -la ~/workspace
-  #     - run: 
-  #         name: fail command
-  #         command: exit 0
-  #     - print_on_fail
 
   Update-S3-Bucket:
     docker:
