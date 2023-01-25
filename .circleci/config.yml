@@ -67,7 +67,7 @@ jobs:
             cp -R $(cat mv_list) ./destination
             ls -a ./destination 
             aws s3 ls
-            # aws s3 cp ./destination s3://devlook.tech --recursive
+            aws s3 cp ./destination s3://devlook.tech --recursive
 
 workflows:
   welcome:
