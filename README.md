@@ -20,7 +20,6 @@ Building a personal website with  HTML, CSS and Javascript and running a pipelin
   - S3 Bucket - ``` expose for public access ```
   - Route 53 - ``` optional ```
 
-
 ### Live Hosting At
 [devLook](http://devlook.tech/)
 
