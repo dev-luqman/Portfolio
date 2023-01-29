@@ -12,3 +12,4 @@
 
 ### Copy all files and folders in the destination folder to s3 bucket 
 ``` aws s3 cp destination s3://devlook.tech --recursive ```
+
