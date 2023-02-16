@@ -36,8 +36,8 @@ jobs:
     
     - name: Run Test In Success/Failed Condition
       uses: actions/setup-node@v3
-      if: always()
     - run: echo "Run with Condition"
+      if: always()
 #       with:
 #         node-version: ${{ matrix.node-version }}
 #         cache: 'npm'
