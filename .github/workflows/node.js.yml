@@ -18,10 +18,15 @@ jobs:
 #       matrix:
 #         node-version: [14.x, 16.x, 18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
+   
+ 
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+    - run: echo "Let Start"
+    
+    - name: Run Test In Success/Failed Condition
       uses: actions/setup-node@v3
     - run: exit 1
     
@@ -29,10 +34,9 @@ jobs:
       uses: actions/setup-node@v3
     - run: echo "i am in with no condition"
     
-    
     - name: Run Test In Success/Failed Condition
-      if: success() || failure()
       uses: actions/setup-node@v3
+      continue-on-error: true
     - run: echo "Run with Condition"
 #       with:
 #         node-version: ${{ matrix.node-version }}
