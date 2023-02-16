@@ -35,6 +35,7 @@ jobs:
     - run: echo "i am in with no condition"
     
     - name: Run Test In Success/Failed Condition
+      if: always()
       uses: actions/setup-node@v3
     - run: echo "Run with Condition"
       if: always()
