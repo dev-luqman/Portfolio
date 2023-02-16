@@ -22,11 +22,11 @@ jobs:
  
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Start Job
       uses: actions/setup-node@v3
     - run: echo "Let Start"
     
-    - name: Run Test In Success/Failed Condition
+    - name: Failed Action
       uses: actions/setup-node@v3
     - run: exit 1
     
