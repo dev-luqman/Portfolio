@@ -36,7 +36,7 @@ jobs:
     
     - name: Run Test In Success/Failed Condition
       uses: actions/setup-node@v3
-      continue-on-error: true
+      if: always()
     - run: echo "Run with Condition"
 #       with:
 #         node-version: ${{ matrix.node-version }}
