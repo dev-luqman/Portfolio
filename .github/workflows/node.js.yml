@@ -30,7 +30,7 @@ jobs:
     
     - name: Failed Action
       uses: actions/setup-node@v3
-    - run: exit 0
+    - run: exit 1
     
     - name: Run Without Condition
       uses: actions/setup-node@v3
@@ -46,7 +46,7 @@ jobs:
       uses: act10ns/slack@v1
       with: 
         status: ${{ job.status }}
-        channel: '#meetups'
+        channel: '#general'
         message: Deployed {{ env.GITHUB_REF_NAME }} branch Successfully
       if: always()  
 #       with:
