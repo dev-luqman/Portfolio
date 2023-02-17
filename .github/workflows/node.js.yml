@@ -30,7 +30,7 @@ jobs:
     
     - name: Failed Action
       uses: actions/setup-node@v3
-    - run: exit 1
+    - run: exit 0
     
     - name: Run Without Condition
       uses: actions/setup-node@v3
