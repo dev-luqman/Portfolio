@@ -42,16 +42,27 @@ jobs:
     - run: echo "Run with Condition"
       if: always()
       
+#     - name: Slack Notification
+#       uses: act10ns/slack@v1
+#       env: 
+#         SLACK_MESSAGE: 'Post Content :rocket:'
+#         SLACK_TITLE: Post Title
+#       with: 
+#         status: ${{ job.status }}
+#         channel: '@lukheebalo'
+#         steps: ${{ toJson(steps) }}
+#         message: Deployed {{ env.GITHUB_REF_NAME }} branch, by {{ env.GITHUB_ACTOR }} ${{job.status}}
+#       if: always()  
     - name: Slack Notification
-      uses: act10ns/slack@v1
-      env: 
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_CHANNEL: general
+        SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+        SLACK_ICON: https://github.com/rtCamp.png?size=48
         SLACK_MESSAGE: 'Post Content :rocket:'
         SLACK_TITLE: Post Title
-      with: 
-        status: ${{ job.status }}
-        channel: '@lukheebalo'
-        steps: ${{ toJson(steps) }}
-        message: Deployed {{ env.GITHUB_REF_NAME }} branch, by {{ env.GITHUB_ACTOR }} ${{job.status}}
+        SLACK_USERNAME: rtCamp
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
       if: always()  
 #       with:
 #         node-version: ${{ matrix.node-version }}
