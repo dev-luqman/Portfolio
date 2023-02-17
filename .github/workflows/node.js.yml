@@ -47,7 +47,7 @@ jobs:
       with: 
         status: ${{ job.status }}
         channel: '#general'
-        message: Deployed {{ env.GITHUB_REF_NAME }} branch Successfully
+        message: Deployed {{ env.GITHUB_REF_NAME }} branch, by {{ env.GITHUB_ACTOR }}
       if: always()  
 #       with:
 #         node-version: ${{ matrix.node-version }}
