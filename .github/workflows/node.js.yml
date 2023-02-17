@@ -44,6 +44,9 @@ jobs:
       
     - name: Slack Notification
       uses: act10ns/slack@v1
+      env: 
+        SLACK_MESSAGE: 'Post Content :rocket:'
+        SLACK_TITLE: Post Title
       with: 
         status: ${{ job.status }}
         channel: '#general'
