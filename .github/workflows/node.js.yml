@@ -49,7 +49,8 @@ jobs:
         SLACK_TITLE: Post Title
       with: 
         status: ${{ job.status }}
-        channel: '#general'
+        channel: '@lukheebalo'
+        steps: ${{ toJson(steps) }}
         message: Deployed {{ env.GITHUB_REF_NAME }} branch, by {{ env.GITHUB_ACTOR }} ${{job.status}}
       if: always()  
 #       with:
