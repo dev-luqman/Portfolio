@@ -17,8 +17,8 @@ Building a personal website with  HTML, CSS and Javascript and running a pipelin
 - [CircleCi](https://circleci.com/)
 - [AWS](https://aws.amazon.com/)
   - IAM with least access to only s3-bucket
-  - S3 Bucket - ``` expose for public access ```
-  - Route 53 - ``` optional ```
+  - S3 Bucket -- ``` expose for public access ```
+  - Route 53 -- ``` optional ```
 
 
 ### Live Hosting At
