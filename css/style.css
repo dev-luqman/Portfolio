@@ -926,6 +926,16 @@ a:focus {
 	padding: 42px 40px 43px;
 	border: 1px solid #151412;
 }
+
+.resumo_fn_boxed_list .item p span{
+	font-weight: bold;
+	display: block
+}
+
+.resumo_fn_boxed_list .item p{
+	margin-bottom: 10px;
+	font-size: 14px
+}
 .resumo_fn_boxed_list .item:after{
 	content: '';
 	position: absolute;
